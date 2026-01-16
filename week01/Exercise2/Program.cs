@@ -45,7 +45,7 @@ class Program
            Console.WriteLine("Don't give up! Keep trying and you'll do better next time.");         
         }
         
-        // Determine + or - sign
+        // Stretch :Determine + or - sign
         
         string sign = "";
         int lastDigit = grade % 10;
