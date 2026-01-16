@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter your grade percentage: ");
+        // Ask for grade and determine letter grade
+        Console.Write("Enter your grade percentage: ");
         int grade = int.Parse(Console.ReadLine());
 
         string letter;
@@ -33,6 +34,7 @@ class Program
         {
             letter = "F";
         }
+        // Determine pass or fail
 
         if (grade >= 70)
         {
@@ -42,6 +44,8 @@ class Program
         {
            Console.WriteLine("Don't give up! Keep trying and you'll do better next time.");         
         }
+        
+        // Determine + or - sign
         
         string sign = "";
         int lastDigit = grade % 10;
@@ -54,6 +58,8 @@ class Program
         {
             sign = "-";
         }
+
+        // Handle special cases
         
         if (letter == "A" && sign == "+")
         {
