@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ReflectionActivity : Activity
 {
-    private List<string> _prompts = new List<string>
+    private List<string> _allPrompts = new List<string>
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -35,7 +35,14 @@ public class ReflectionActivity : Activity
         StartActivity();
 
         Random rand = new Random();
-        Console.WriteLine("\n" + _prompts[rand.Next(_prompts.Count)]);
+
+        // Ensure prompts are not repeated until all are used
+        List<string> unusedPrompts = new List<string>(_allPrompts);
+
+        string prompts = unusedPrompts[rand.Next(unusedPrompts.Count)];
+        unusedPrompts.Remove(prompts);
+
+        Console.WriteLine("\n" + prompts);
         ShowSpinner(5);
 
         DateTime endTime = DateTime.Now.AddSeconds(_duration);

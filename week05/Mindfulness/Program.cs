@@ -2,8 +2,8 @@ using System;
 
 /*
 EXCEEDING REQUIREMENTS:
-- Used reusable spinner and countdown animations in the base Activity class
-- Clean inheritance structure with zero duplicated logic
+- Implemented logic in ReflectionActivity to ensure reflection prompts
+    are not repeated until all prompts have been used once during the session.
 */
 
 class Program
