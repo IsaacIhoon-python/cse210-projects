@@ -25,15 +25,7 @@ public class Order
             total += product.GetTotalCost();
         }
 
-        if (_customer.LivesInUSA())
-        {
-            total += 5;
-        }
-        else
-        {
-            total += 35;
-        }
-
+        total += _customer.LivesInUSA() ? 5 : 35;
         return total;
     }
 
